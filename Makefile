@@ -143,7 +143,6 @@ init:
 	echo "PHP_VERSION=$(PHP_VERSION)" >> .docker.env.example
 	echo "NGINX_PHP_UPSTREAM_CONTAINER=php-fpm-ex" >> .docker.env.example
 	echo "MACHINE_IP=192.168.161.199" >> .docker.env.example
-	echo "PHP_IDE_CONFIG=serverName=$(PROJECT_NAME)" >> .docker.env.example
 
 
 	if [ ! -f ".docker.env" ]; then cp .docker.env.example .docker.env; fi
