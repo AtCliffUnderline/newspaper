@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+		$this->app->bind(NewsRepositoryInterface::class, NewsRepository::class);
     }
 
     /**
@@ -25,6 +25,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app->bind(NewsRepositoryInterface::class, NewsRepository::class);
+
     }
 }

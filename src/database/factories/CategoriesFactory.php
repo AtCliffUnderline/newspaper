@@ -2,7 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Models\{Category, News};
+use App\Models\Category;
 use Faker\Generator as Faker;
 
 /*
@@ -16,21 +16,12 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(News::class, function (Faker $faker) {
-	$categories = Category::all();
-	if($categories->count() > 0) {
-		$categoryId = $categories->random()->id;
-	} else {
-		$categoryId = factory(Category::class)->create();
-	}
-
+$factory->define(Category::class, function (Faker $faker) {
     return [
-        'heading' => $faker->sentence,
-        'text' => $faker->paragraph(15),
-        'category_id' => $categoryId
+        'name' => $faker->word,
     ];
 });
 
-$factory->afterCreating(News::class, function($news) {
-	$news->wasRecentlyCreated = false;
+$factory->afterCreating(Category::class, function($category) {
+	$category->wasRecentlyCreated = false;
 });
