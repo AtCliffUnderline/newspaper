@@ -3,10 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\News;
+use App\Services\NewsService;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
+	/**
+	 * @var NewsService
+	 */
+	private $newsService;
+
+	public function __construct(NewsService $newsService)
+	{
+		$this->newsService = $newsService;
+	}
+
 	/**
 	 * Index page
 	 * @param Request $request
@@ -15,7 +26,7 @@ class MainController extends Controller
 	public function index(Request $request)
 	{
 		return view('index', [
-			'newsList' => News::paginate(15)
+			'newsList' => $this->newsService->getPaginatedNews()
 		]);
     }
 }

@@ -11,6 +11,7 @@ After this step application is running, but Laravel is not actually working, so:
 
 * Run `make in` to get into workspace container.
 * Run `cp .env.example .env` to prepare environment file (encryption key included).
+* Run `composer install` to get packages which are needed for app to exist.
 * Run `artisan make:localdb` to create a local database.
 * Run `artisan migrate && artisan db:seed` to fill the database with needed data.
 
