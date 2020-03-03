@@ -4,8 +4,63 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3bb4dacacf43532a01bf1d3d6dd3bbe1",
+    "content-hash": "dd46476e4e8c9f785f1548f1df595243",
     "packages": [
+        {
+            "name": "atcliff/laravel-crud-forms",
+            "version": "3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AtCliffUnderline/laravel-crud-forms.git",
+                "reference": "0fb6747728f18751c282f50652ea46db4c2e006c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AtCliffUnderline/laravel-crud-forms/zipball/0fb6747728f18751c282f50652ea46db4c2e006c",
+                "reference": "0fb6747728f18751c282f50652ea46db4c2e006c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "orchestra/testbench": "^4.0",
+                "phpunit/phpunit": "^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Achillesp\\CrudForms\\CrudFormsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Achillesp\\CrudForms\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Achilles Panagiotou",
+                    "email": "achilles.p@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Create CRUD Forms for Laravel Models.",
+            "keywords": [
+                "Forms",
+                "crud",
+                "eloquent",
+                "laravel"
+            ],
+            "time": "2019-12-17T09:50:02+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "v0.1.1",
@@ -4988,7 +5043,8 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.2"
+        "php": "^7.2",
+        "ext-pdo": "*"
     },
     "platform-dev": []
 }
